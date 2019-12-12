@@ -1,0 +1,17 @@
+<div class="header">
+  
+    {{!-- <div>{{#link-to 'add-item'}}New Task{{/link-to}}</div> --}}
+  {{!-- <button class="task-add" >
+      <span class="plus"/>
+    </button> --}}
+{{#link-to 'add-item' class='btn btn-primary task-add' tagName='button'}}
+     <span class="plus"/>
+{{/link-to}}
+  <h1 id= "title">
+        משימות
+
+    </h1>
+</div>
+
+
+{{yield}}

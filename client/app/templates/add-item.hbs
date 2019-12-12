@@ -1,0 +1,13 @@
+
+<form id="task-add-form">
+
+<button {{action 'addTask'}}>הוסף</button>
+  {{input type="text" class="input-width" value=des placeholder="...הקלד כאן"}}
+
+</form>
+
+
+{{#link-to "todo-list"}}חזרה לדף ראשי{{/link-to}}
+
+
+{{outlet}}

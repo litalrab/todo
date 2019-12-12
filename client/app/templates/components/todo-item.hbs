@@ -1,0 +1,23 @@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<li class="checkbox">
+
+        <input type="checkbox" disabled={{task.isDone}} checked={{task.isDone}} onclick={{action "changeToDone" task.description }} />
+
+
+
+      <span id="task-del" onclick={{action "deleteTask" task.id}}>X</span>
+      <span class={{if task.isDone "lit"}}>{{task.description}}</span>
+      {{!-- <span onclick={{action "editTitle"}}> ערוך</span> --}}
+      <i onclick={{action "editDescription"}} class="fa fa-edit edit" style="font-size:20px"></i>
+ {{#if editDescription }}
+  {{!-- <form>    --}}
+     {{input type="text" class="input-width" value=des placeholder="אנא הקלד טקסט כאן.."}}
+      {{!-- <input class="title" value={{des}}  /> --}}
+      <button type="sumbit" {{action 'editTask'}}>אשר</button>
+      {{!-- </form> --}}
+
+{{/if}}
+    </li>
+
+{{yield}}
