@@ -6,17 +6,6 @@
 
         {{todo-item task=todo index=index class=(concat "todo-list " (if todo.isDone 'lit' )) editDescription=false  tasks=model}}
 
-    {{!-- <li class="checkbox">
-
-        <input type="checkbox" disabled={{todo.isDone}} checked={{todo.isDone}} onclick={{action "changeToDone" todo.description }} />
-
-     
-
-      <span class={{if todo.isDone "lit"}}>{{todo.description}}</span>
-    </li> --}}
-
-
-
   {{/each}}
 </ol>
 {{!-- {{/if}} --}}
