@@ -2,12 +2,13 @@
 
 <li class="checkbox">
 
-        <input type="checkbox" disabled={{task.isDone}} checked={{task.isDone}} onclick={{action "changeToDone" task.description }} />
+        {{!-- <input type="checkbox" disabled={{task.isDone}} checked={{task.isDone}} onclick={{action "changeToDone" task.description }} /> --}}
+        <span class={{ if task.isDone "checkbox-done" "checkbox-todo"}} onclick={{unless task.isDone (action "changeToDone" task.description) }} ></span>
 
 
 
       <span id="task-del" onclick={{action "deleteTask" task.id}}>X</span>
-      <span class={{if task.isDone "lit"}}>{{task.description}}</span>
+      <span class={{if task.isDone "task-done"}}>{{task.description}}</span>
       {{!-- <span onclick={{action "editTitle"}}> ערוך</span> --}}
       <i onclick={{action "editDescription"}} class="fa fa-edit edit" style="font-size:20px"></i>
  {{#if editDescription }}

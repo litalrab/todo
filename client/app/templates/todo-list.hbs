@@ -4,7 +4,7 @@
 <ol id="todo-list" dir="rtl">
   {{#each model as |todo index|}}
 
-        {{todo-item task=todo index=index class=(concat "todo-list " (if todo.isDone 'lit' )) editDescription=false  tasks=model}}
+        {{todo-item task=todo index=index class=(concat "todo-list " (if todo.isDone 'task-done' )) editDescription=false  tasks=model}}
 
   {{/each}}
 </ol>

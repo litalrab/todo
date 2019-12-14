@@ -1,7 +1,34 @@
-.lit {
+.task-done {
     text-decoration: line-through;
     background-color: lightgray;
 
+  }
+  .checkbox-todo{
+    display: inline-block;
+
+    background-color: lightgray;
+    color: #2A363B;;
+    /* padding-bottom: 12px; */
+    width: 30px;
+    margin: 0 5px 0 5px;
+
+    height: 30px;
+    box-shadow: 0 10px 6px -2px grey;
+    border-radius: 8px;
+  cursor: pointer;
+  }
+  .checkbox-done
+  {
+    background-color: #685a5a;
+    display: inline-block;
+    color: #2A363B;
+    margin: 0 5px 0 5px;
+
+    width: 30px;
+    height: 30px;
+    box-shadow: 0 10px 6px -2px grey;
+    border-radius: 8px;
+ 
   }
   .header {
     display: flex;
