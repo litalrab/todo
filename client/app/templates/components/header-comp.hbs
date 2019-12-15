@@ -1,16 +1,25 @@
 <div class="header">
-  
-    {{!-- <div>{{#link-to 'add-item'}}New Task{{/link-to}}</div> --}}
-  {{!-- <button class="task-add" >
-      <span class="plus"/>
-    </button> --}}
-{{#link-to 'add-item' class='btn btn-primary task-add' tagName='button'}}
-     <span class="plus"/>
-{{/link-to}}
+
+<button class='btn btn-primary task-add' {{action "openNewTask"}}>      
+  <span class="plus"/>
+</button>
+  {{!-- {{div  class='btn btn-primary task-add' action='openNewTask' tagName='button'}}
+      <span class="plus"/> --}}
+
+
+{{#if editAddTask }}
+  <form id="task-add-form">
+
+  <button {{action 'addTask'}}>הוסף</button>
+    {{input type="text" class="input-width" value=des placeholder="...הקלד כאן"}}
+
+  </form>
+{{/if}}
   <h1 id= "title">
         משימות
 
     </h1>
+
 </div>
 
 

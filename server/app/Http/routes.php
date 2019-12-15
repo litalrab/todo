@@ -17,45 +17,48 @@ use App\Task;
 //     return view('welcome');
 // });
 
-Route::get('tasks',function() {
-    // If the Content-Type and Accept headers are set to 'application/json',
-    // this will return a JSON structure. This will be cleaned up later.
-    return Task::all();
-});
-Route::get('tasks/{id}', ['middleware' => 'cors', function($id) {
-    return Task::find($id);
-}]);
+Route::resource('tasks','TodoController');
+
+
+// Route::get('tasks',function() {
+//     // If the Content-Type and Accept headers are set to 'application/json',
+//     // this will return a JSON structure. This will be cleaned up later.
+//     return Task::all();
+// });
+// Route::get('tasks/{id}', ['middleware' => 'cors', function($id) {
+//     return Task::find($id);
+// }]);
 
 
 
-/**
- * Add New Task
- */
-Route::post('/tasks', ['middleware' => 'cors',function (Request $request) {
-    $task = Task::create($request->all());
-    return $task;
-}]);
+// /**
+//  * Add New Task
+//  */
+// Route::post('/tasks', ['middleware' => 'cors',function (Request $request) {
+//     $task = Task::create($request->all());
+//     return $task;
+// }]);
 
-/**
- * Delete Task
- */
-Route::delete('/tasks/{id}', ['middleware' => 'cors', function ($id) {
-    $task =Task::findOrFail($id);
-    $task->delete();
-    return $task ;
-}]);
+// /**
+//  * Delete Task
+//  */
+// Route::delete('/tasks/{id}', ['middleware' => 'cors', function ($id) {
+//     $task =Task::findOrFail($id);
+//     $task->delete();
+//     return $task ;
+// }]);
 
-/**
- * edit Task
- */
-Route::put('tasks/{id}', ['middleware' => 'cors', function(Request $request, $id) {
-    $task = Task::findOrFail($id);
-    $task->update($request->all());
-    return $task;
-}]);
+// /**
+//  * edit Task
+//  */
+// Route::put('tasks/{id}', ['middleware' => 'cors', function(Request $request, $id) {
+//     $task = Task::findOrFail($id);
+//     $task->update($request->all());
+//     return $task;
+// }]);
 
-Route::patch('tasks/{id}',['middleware' => 'cors', function(Request $request, $id) {
-    $task = Task::findOrFail($id);
-    $task->update($request->all());
-    return $task;
-}]);
+// Route::patch('tasks/{id}',['middleware' => 'cors', function(Request $request, $id) {
+//     $task = Task::findOrFail($id);
+//     $task->update($request->all());
+//     return $task;
+// }]);

@@ -8,17 +8,20 @@
 
 
       <span id="task-del" onclick={{action "deleteTask" task.id}}>X</span>
-      <span class={{if task.isDone "task-done"}}>{{task.description}}</span>
-      {{!-- <span onclick={{action "editTitle"}}> ערוך</span> --}}
-      <i onclick={{action "editDescription"}} class="fa fa-edit edit" style="font-size:20px"></i>
+
  {{#if editDescription }}
   {{!-- <form>    --}}
-     {{input type="text" class="input-width" value=des placeholder="אנא הקלד טקסט כאן.."}}
+     {{input type="text" class="input-width" value=task.description placeholder="אנא הקלד טקסט כאן.."}}
    
       <button type="sumbit" {{action 'editTask'}}>אשר</button>
       {{!-- </form> --}}
+      {{else}}
+      <span class={{if task.isDone "task-done"}}>{{task.description}}</span>
+      {{!-- <span onclick={{action "editTitle"}}> ערוך</span> --}}
+      <i onclick={{action "editDescription"}} class="fa fa-edit edit" style="font-size:20px"></i>
 
 {{/if}}
+
     </li>
 
 {{yield}}

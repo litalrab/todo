@@ -1,3 +1,6 @@
+body{
+  max-width:600px;
+}
 .task-done {
     text-decoration: line-through;
     background-color: lightgray;
@@ -48,7 +51,7 @@
       text-align: right;
     }
     .input-width{
-      width: 300px;
+      width: 200px;
 
     }
    .task-add {
