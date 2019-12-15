@@ -30,7 +30,7 @@ export default Component.extend({
               editTask()
               {
                 console.log(this.task._internalModel._data)
-                let description =this.get('des');           
+                let description =this.get('task.description');           
                 this.task.set('description',description);
                 this.get('todo').editTask(this.task._internalModel._data.isDone);
     
