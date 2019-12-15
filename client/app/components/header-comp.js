@@ -6,19 +6,14 @@ export default Component.extend({
     store: Ember.inject.service('store'),
   
           actions : {
-            addTask() {
-                let description =this.get('des');           
-                // this.transitionToRoute("/");                     
-                let newTask = this.get('store').createRecord('task',{description,isDone:false});
-                newTask.save();  
-                this.get('todo').addTask();
-                this.set('editAddTask',false);                   
+            
+            openNewTask()
+           {
+            this.get('todo').editAddTaskToggle(); 
+            // this.$('#task-add-input').focus(); 
 
-              },
-              openNewTask()
-             {
-                this.set('editAddTask',true);                   
-             }
+                          
+           }
 
             }
 

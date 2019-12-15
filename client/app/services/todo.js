@@ -8,9 +8,11 @@ export default Service.extend({
     done :0,
     total :0,
     todo   :0,
-  
+    editAddTask:false,
         init() {
           this._super(...arguments);
+          this.set('done', completedCounter);
+
           var completedCounter = 0;
           this.get('store').findAll('task')
           .then(results => 
@@ -38,6 +40,10 @@ export default Service.extend({
 
               }
             
+        },
+        editAddTaskToggle()
+        {
+          this.set('editAddTask', !this.get('editAddTask'))
         },
       addTask() {
         this.set('total', this.total+1);

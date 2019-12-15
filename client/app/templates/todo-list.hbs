@@ -1,6 +1,7 @@
 
 {{outlet}}
 
+
 <ol id="todo-list" dir="rtl">
   {{#each model as |todo index|}}
 
@@ -8,5 +9,13 @@
 
   {{/each}}
 </ol>
+{{#if todo.editAddTask }}
+  <form id="task-add-form">
+
+  <button {{action 'addTask'}}>הוסף</button>
+    {{input autofocus="autofocus" id="task-add-input" type="text" class="input-width" value=des placeholder="...הקלד כאן"}}
+
+  </form>
+{{/if}}
 {{!-- {{/if}} --}}
 

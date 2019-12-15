@@ -14,6 +14,15 @@ export default Controller.extend({
  
             // this.todos.change({ description: num, isDone:false });
  
-       }
+       },
+       addTask() {
+        let description =this.get('des');           
+        // this.transitionToRoute("/");                     
+        let newTask = this.get('store').createRecord('task',{description,isDone:false});
+        newTask.save();  
+        this.get('todo').addTask();
+        this.set('editAddTask',false);                   
+
+      }
     }
 });
